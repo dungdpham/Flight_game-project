@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <title>Alisa in Wonderland</title>
+</head>
+
+<body>
+<div class="container">
+    <header class="page-header">
+        <h1 class="page-title">Alisa in Wonderland</h1>
+        <nav>
+            <ul class="flex-wrap space-evenly">
+                <li>
+                    <a class="button button-white" href="index.html">Game</a>
+                </li>
+                <li>
+                    <a class="button button-white" href="about.html">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="flex-wrap">
+        <div id="map">
+
+        </div>
+        <div class="boxes">
+            <section class="box">
+                <header id="game-status">
+                    <h2>Game Status</h2>
+                </header>
+                <table>
+                    <tr>
+                        <td colspan="3"><h3 id="player-name">Player name</h3></td>
+                    </tr>
+                    <tr>
+                        <td>Balance: <span class="stt" id="balance">0</span>€</td>
+                        <td>Day travelled: <span class="stt" id="day-total">0</span>&nbsp;days</td>
+                        <td>Money spent: <span class="stt" id="money-spent">0</span>€</td>
+                    </tr>
+                </table>
+            </section>
+            <section class="box flex-wrap">
+                <header id="game-main">
+                    <h2><span id="current-loc">Helsinki</span></h2>
+                </header>
+                <div class="box center" id="sprite-div">
+                    <img id="sprite" src="img/sprite.gif" alt="character sprite">
+                </div>
+                <div class="box" id="game-question"></div>
+                <div class="box" id="options"></div>
+                <div class="box" id="day-input">
+                    <form id="day-input-form">
+                        <div id="day-input-text"></div>
+                        <input id="day-input-value" type="number" min="0" placeholder="How many days to stay?" required>
+                        <input id="day-button" type="submit" value="Stay!">
+                        <div id="day-result"></div>
+                    </form>
+                </div>
+                <div style="width: 100%; display:flex; justify-content:space-around">
+                    <button class="to-continent" type="button" id="af">Africa!</button>
+                    <button class="to-continent" type="button" id="as">Asia!</button>
+                    <button class="to-continent" type="button" id="oc">Oceania!</button>
+                    <button class="to-continent" type="button" id="sa">South America!</button>
+                    <button class="to-continent" type="button" id="fi">Home!</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="page-footer">
+        <p>Game demo by Group 2</p>
+    </footer>
+</div>
+<div id="player-modal">
+    <form id="player-form">
+        <input id="name-input" type="text" placeholder="Player name" required>
+        <input type="submit" value="Start game">
+    </form>
+</div>
+</body>
+</html>
